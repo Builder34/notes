@@ -1,0 +1,68 @@
+maven构建spring、springmvc、mybatis的学习记录：
+
+（maven项目的src目录下，应该有main/java、main/resources、test/java、test/resources、webapp目录，
+若缺少其中某项，可以查看项目下的.classpath文件，查看并对其做配置，配置完后，可通过build path，调出相应的目录.）
+
+1.pom.xml配置
+1.1基础属性简单设置：
+ <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>x.x.xx.RELEASE</spring.version>
+ </properties>
+ <dependencies>
+ ...
+ </dependencies>
+1.2主要包的依赖：	
+1.2.1 基础：servlet-api、commons-beanutils、commons-lang
+1.2.2 单元测试：junit
+1.2.3 日志框架：log4j、slf4j-api、slf4j-log4j
+1.2.4 spring框架：spring-core、spring-beans、spring-context、spring-context-support、spring-web、spring-webmvc、spring-jdbc
+1.2.5 mybatis框架：
+2.applicationContext.xml配置
+
+3.springmvc-serlvet.xml配置
+
+4.web.xml配置
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	
+</web-app>
+
+
+
+总结这次说的，我建议使用SLF4J的而不是直接使用 Log4j, commons logging, logback 或者 java.util.logging 已经足够充分了。
+
+在你的开源或内部类库中使用SLF4J会使得它独立于任何一个特定的日志实现，这意味着不需要管理多个日志配置或者多个日志类库，
+你的客户端会很感激这点。
+SLF4J提供了基于占位符的日志方法，这通过去除检查isDebugEnabled(), isInfoEnabled()等等，提高了代码可读性。
+通过使用SLF4J的日志方法，你可以延迟构建日志信息（Srting）的开销，直到你真正需要，这对于内存和CPU都是高效的。
+作为附注，更少的暂时的字符串意味着垃圾回收器（Garbage Collector）需要做更好的工作，
+这意味着你的应用程序有为更好的吞吐量和性能。
+这些好处只是冰山一角，你将在开始使用SL4J和阅读其中代码的时候知道更多的好处。我强烈建议，任何一个新的Java程序员，
+都应该使用SLF4J做日志而不是使用包括Log4J在内的其他日志API。
+
+################################################
+spring mvc框架的学习：
+
+Spring MVC的核心是DispatcherServlet，第一件事就是需要把它配置到web.xml文件中：
+	<!-- Spring MVC -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- 不配此初始化参数，则会默认取WEB-INF/下(servlet-name)-servlet.xml文件 -->
+		<init-param>
+        	<param-name>contextConfigLocation</param-name>
+        	<param-value>classpath:springmvc-servlet.xml</param-value>
+    	</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+
+################################################

@@ -1,0 +1,22 @@
+1.关于深复制，解决对象循环引用
+一个List被引用时，想要得到一个新的List，而不想指向它：
+1.1方法1：Clonable
+	List<User>  list = new ArrayList<User>() ;
+	这个User必须实现了Clonable接口，并且重写了clone方法，返回User
+	
+	Itertor iters = srcList.itertor() ;
+	while(iters.hasNext()){
+		list.add(iters.next().clone()) ;
+	}
+1.2方法2：cglib的BeanCopier，或apache的BeanUtils等工具
+	Itertor iters = srcList.itertor() ;
+	while(iters.hasNext()){
+		//BeanCopier
+	}
+	
+	
+2. log4j日志输出到Eclipse控制台中文乱码
+
+http://www.coderli.com/log4j-console-file-garbled  ： log4j配置的编码为UTF-8时
+
+Windows-Perferences-General-Workspace-Text file encoding ：eclipse控制台的输出编码也需要为UTF-8，这样匹配了则不会乱码

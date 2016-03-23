@@ -1,0 +1,2 @@
+isAvailable做为mapper的id时，如<select id="isAvailable">好像会出错，难道是关键字，还需考证。
+Mapped Statements collection does not contain value for（也可能是前后调用mapper时，id没对应）
