@@ -1,0 +1,33 @@
+1. 默认mybatis generator会在生成普通代码同时附加example的示例代码，通常我们不需要这些东西，
+生成出来清理也麻烦，可以在generator的xml配置文件的table配置项中添加
+enableCountByExample="false"
+enableUpdateByExample="false" enableDeleteByExample="false"
+enableSelectByExample="false" selectByExampleQueryId="false"
+来关闭example代码的输出。
+2. 工具在eclipse中使用有可能会提示jdbc找不到，这时候在配置文件中添加classPathEntry配置项即可，将mysql的jdbc包引用进来，
+类似如下配置：
+
+<classPathEntry location="C:\Users\leo\.m2\repository\mysql\mysql-connector-java\5.1.26\mysql-connector-java-5.1.26.jar"/>
+3. 配置文件中commentGenerator配置项最好不要设置为不生成注释，因为这样带来的问题是在自动生成的代码上不会存在@mbggenerated 这样的标记，这个标记是用来标注这些代码是代码生成器生成的，如果关闭了注释，我们在多次使用mybatis generator重新生成代码时会导致在已有生成的文件上追加生成重复的内容，
+导致代码错误，故我建议如果你只生成一次代码，以后再不用工具生成可以关闭注释，如果会重复生成就要把注释开关打开。我的配置参数是关闭时间注释：
+<commentGenerator>
+    <property name="suppressDate" value="true"/>
+</commentGenerator>
+
+4 我们可以在生成好的代码上继续添加我们要实现的功能代码，但是在用中文注释代码的时候，我们再用generator重新生成代码，
+我们已有代码是不会被覆盖和修改的，但是中文注释有可能变成乱码，这是因为我们在工具配置文件上没有全局指定文件编码，
+只要我们在context的配置区域里面加入如下配置即可：
+1
+<property name="javaFileEncoding" value="UTF-8"/>
+
+5. mybatis generator生成的代码注释比较丑陋，同时也不支持在model代码中自动添加数据库字段注释，
+我们可以通过修改插件源代码来实现。从官网下载插件
+https://github.com/mybatis/generator/tree/master/core/mybatis-generator-core
+核心代码，修改/mybatis-generator-core/src/main/java/org/mybatis/generator/internal/DefaultCommentGenerator.java
+文件，其中addFieldComment 方法的参数introspectedColumn即包含了数据库字段的相关数据，
+调用的方法是getRemarks ，怎么修改我就不说了，你懂的。
+
+
+
+自定义注释:
+http://www.blogjava.net/bolo/archive/2015/03/25/423826.html
