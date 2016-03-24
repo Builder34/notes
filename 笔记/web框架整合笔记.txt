@@ -1,10 +1,10 @@
-maven¹¹½¨spring¡¢springmvc¡¢mybatisµÄÑ§Ï°¼ÇÂ¼£º
+mavenæ„å»ºspringã€springmvcã€mybatisçš„å­¦ä¹ è®°å½•ï¼š
 
-£¨mavenÏîÄ¿µÄsrcÄ¿Â¼ÏÂ£¬Ó¦¸ÃÓĞmain/java¡¢main/resources¡¢test/java¡¢test/resources¡¢webappÄ¿Â¼£¬
-ÈôÈ±ÉÙÆäÖĞÄ³Ïî£¬¿ÉÒÔ²é¿´ÏîÄ¿ÏÂµÄ.classpathÎÄ¼ş£¬²é¿´²¢¶ÔÆä×öÅäÖÃ£¬ÅäÖÃÍêºó£¬¿ÉÍ¨¹ıbuild path£¬µ÷³öÏàÓ¦µÄÄ¿Â¼.£©
+ï¼ˆmavené¡¹ç›®çš„srcç›®å½•ä¸‹ï¼Œåº”è¯¥æœ‰main/javaã€main/resourcesã€test/javaã€test/resourcesã€webappç›®å½•ï¼Œ
+è‹¥ç¼ºå°‘å…¶ä¸­æŸé¡¹ï¼Œå¯ä»¥æŸ¥çœ‹é¡¹ç›®ä¸‹çš„.classpathæ–‡ä»¶ï¼ŒæŸ¥çœ‹å¹¶å¯¹å…¶åšé…ç½®ï¼Œé…ç½®å®Œåï¼Œå¯é€šè¿‡build pathï¼Œè°ƒå‡ºç›¸åº”çš„ç›®å½•.ï¼‰
 
-1.pom.xmlÅäÖÃ
-1.1»ù´¡ÊôĞÔ¼òµ¥ÉèÖÃ£º
+1.pom.xmlé…ç½®
+1.1åŸºç¡€å±æ€§ç®€å•è®¾ç½®ï¼š
  <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>x.x.xx.RELEASE</spring.version>
@@ -12,17 +12,17 @@ maven¹¹½¨spring¡¢springmvc¡¢mybatisµÄÑ§Ï°¼ÇÂ¼£º
  <dependencies>
  ...
  </dependencies>
-1.2Ö÷Òª°üµÄÒÀÀµ£º	
-1.2.1 »ù´¡£ºservlet-api¡¢commons-beanutils¡¢commons-lang
-1.2.2 µ¥Ôª²âÊÔ£ºjunit
-1.2.3 ÈÕÖ¾¿ò¼Ü£ºlog4j¡¢slf4j-api¡¢slf4j-log4j
-1.2.4 spring¿ò¼Ü£ºspring-core¡¢spring-beans¡¢spring-context¡¢spring-context-support¡¢spring-web¡¢spring-webmvc¡¢spring-jdbc
-1.2.5 mybatis¿ò¼Ü£º
-2.applicationContext.xmlÅäÖÃ
+1.2ä¸»è¦åŒ…çš„ä¾èµ–ï¼š	
+1.2.1 åŸºç¡€ï¼šservlet-apiã€commons-beanutilsã€commons-lang
+1.2.2 å•å…ƒæµ‹è¯•ï¼šjunit
+1.2.3 æ—¥å¿—æ¡†æ¶ï¼šlog4jã€slf4j-apiã€slf4j-log4j
+1.2.4 springæ¡†æ¶ï¼šspring-coreã€spring-beansã€spring-contextã€spring-context-supportã€spring-webã€spring-webmvcã€spring-jdbc
+1.2.5 mybatisæ¡†æ¶ï¼š
+2.applicationContext.xmlé…ç½®
 
-3.springmvc-serlvet.xmlÅäÖÃ
+3.springmvc-serlvet.xmlé…ç½®
 
-4.web.xmlÅäÖÃ
+4.web.xmlé…ç½®
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
@@ -33,26 +33,26 @@ maven¹¹½¨spring¡¢springmvc¡¢mybatisµÄÑ§Ï°¼ÇÂ¼£º
 
 
 
-×Ü½áÕâ´ÎËµµÄ£¬ÎÒ½¨ÒéÊ¹ÓÃSLF4JµÄ¶ø²»ÊÇÖ±½ÓÊ¹ÓÃ Log4j, commons logging, logback »òÕß java.util.logging ÒÑ¾­×ã¹»³ä·ÖÁË¡£
+æ€»ç»“è¿™æ¬¡è¯´çš„ï¼Œæˆ‘å»ºè®®ä½¿ç”¨SLF4Jçš„è€Œä¸æ˜¯ç›´æ¥ä½¿ç”¨ Log4j, commons logging, logback æˆ–è€… java.util.logging å·²ç»è¶³å¤Ÿå……åˆ†äº†ã€‚
 
-ÔÚÄãµÄ¿ªÔ´»òÄÚ²¿Àà¿âÖĞÊ¹ÓÃSLF4J»áÊ¹µÃËü¶ÀÁ¢ÓÚÈÎºÎÒ»¸öÌØ¶¨µÄÈÕÖ¾ÊµÏÖ£¬ÕâÒâÎ¶×Å²»ĞèÒª¹ÜÀí¶à¸öÈÕÖ¾ÅäÖÃ»òÕß¶à¸öÈÕÖ¾Àà¿â£¬
-ÄãµÄ¿Í»§¶Ë»áºÜ¸Ğ¼¤Õâµã¡£
-SLF4JÌá¹©ÁË»ùÓÚÕ¼Î»·ûµÄÈÕÖ¾·½·¨£¬ÕâÍ¨¹ıÈ¥³ı¼ì²éisDebugEnabled(), isInfoEnabled()µÈµÈ£¬Ìá¸ßÁË´úÂë¿É¶ÁĞÔ¡£
-Í¨¹ıÊ¹ÓÃSLF4JµÄÈÕÖ¾·½·¨£¬Äã¿ÉÒÔÑÓ³Ù¹¹½¨ÈÕÖ¾ĞÅÏ¢£¨Srting£©µÄ¿ªÏú£¬Ö±µ½ÄãÕæÕıĞèÒª£¬Õâ¶ÔÓÚÄÚ´æºÍCPU¶¼ÊÇ¸ßĞ§µÄ¡£
-×÷Îª¸½×¢£¬¸üÉÙµÄÔİÊ±µÄ×Ö·û´®ÒâÎ¶×ÅÀ¬»ø»ØÊÕÆ÷£¨Garbage Collector£©ĞèÒª×ö¸üºÃµÄ¹¤×÷£¬
-ÕâÒâÎ¶×ÅÄãµÄÓ¦ÓÃ³ÌĞòÓĞÎª¸üºÃµÄÍÌÍÂÁ¿ºÍĞÔÄÜ¡£
-ÕâĞ©ºÃ´¦Ö»ÊÇ±ùÉ½Ò»½Ç£¬Äã½«ÔÚ¿ªÊ¼Ê¹ÓÃSL4JºÍÔÄ¶ÁÆäÖĞ´úÂëµÄÊ±ºòÖªµÀ¸ü¶àµÄºÃ´¦¡£ÎÒÇ¿ÁÒ½¨Òé£¬ÈÎºÎÒ»¸öĞÂµÄJava³ÌĞòÔ±£¬
-¶¼Ó¦¸ÃÊ¹ÓÃSLF4J×öÈÕÖ¾¶ø²»ÊÇÊ¹ÓÃ°üÀ¨Log4JÔÚÄÚµÄÆäËûÈÕÖ¾API¡£
+åœ¨ä½ çš„å¼€æºæˆ–å†…éƒ¨ç±»åº“ä¸­ä½¿ç”¨SLF4Jä¼šä½¿å¾—å®ƒç‹¬ç«‹äºä»»ä½•ä¸€ä¸ªç‰¹å®šçš„æ—¥å¿—å®ç°ï¼Œè¿™æ„å‘³ç€ä¸éœ€è¦ç®¡ç†å¤šä¸ªæ—¥å¿—é…ç½®æˆ–è€…å¤šä¸ªæ—¥å¿—ç±»åº“ï¼Œ
+ä½ çš„å®¢æˆ·ç«¯ä¼šå¾ˆæ„Ÿæ¿€è¿™ç‚¹ã€‚
+SLF4Jæä¾›äº†åŸºäºå ä½ç¬¦çš„æ—¥å¿—æ–¹æ³•ï¼Œè¿™é€šè¿‡å»é™¤æ£€æŸ¥isDebugEnabled(), isInfoEnabled()ç­‰ç­‰ï¼Œæé«˜äº†ä»£ç å¯è¯»æ€§ã€‚
+é€šè¿‡ä½¿ç”¨SLF4Jçš„æ—¥å¿—æ–¹æ³•ï¼Œä½ å¯ä»¥å»¶è¿Ÿæ„å»ºæ—¥å¿—ä¿¡æ¯ï¼ˆSrtingï¼‰çš„å¼€é”€ï¼Œç›´åˆ°ä½ çœŸæ­£éœ€è¦ï¼Œè¿™å¯¹äºå†…å­˜å’ŒCPUéƒ½æ˜¯é«˜æ•ˆçš„ã€‚
+ä½œä¸ºé™„æ³¨ï¼Œæ›´å°‘çš„æš‚æ—¶çš„å­—ç¬¦ä¸²æ„å‘³ç€åƒåœ¾å›æ”¶å™¨ï¼ˆGarbage Collectorï¼‰éœ€è¦åšæ›´å¥½çš„å·¥ä½œï¼Œ
+è¿™æ„å‘³ç€ä½ çš„åº”ç”¨ç¨‹åºæœ‰ä¸ºæ›´å¥½çš„ååé‡å’Œæ€§èƒ½ã€‚
+è¿™äº›å¥½å¤„åªæ˜¯å†°å±±ä¸€è§’ï¼Œä½ å°†åœ¨å¼€å§‹ä½¿ç”¨SL4Jå’Œé˜…è¯»å…¶ä¸­ä»£ç çš„æ—¶å€™çŸ¥é“æ›´å¤šçš„å¥½å¤„ã€‚æˆ‘å¼ºçƒˆå»ºè®®ï¼Œä»»ä½•ä¸€ä¸ªæ–°çš„Javaç¨‹åºå‘˜ï¼Œ
+éƒ½åº”è¯¥ä½¿ç”¨SLF4Jåšæ—¥å¿—è€Œä¸æ˜¯ä½¿ç”¨åŒ…æ‹¬Log4Jåœ¨å†…çš„å…¶ä»–æ—¥å¿—APIã€‚
 
 ################################################
-spring mvc¿ò¼ÜµÄÑ§Ï°£º
+spring mvcæ¡†æ¶çš„å­¦ä¹ ï¼š
 
-Spring MVCµÄºËĞÄÊÇDispatcherServlet£¬µÚÒ»¼şÊÂ¾ÍÊÇĞèÒª°ÑËüÅäÖÃµ½web.xmlÎÄ¼şÖĞ£º
+Spring MVCçš„æ ¸å¿ƒæ˜¯DispatcherServletï¼Œç¬¬ä¸€ä»¶äº‹å°±æ˜¯éœ€è¦æŠŠå®ƒé…ç½®åˆ°web.xmlæ–‡ä»¶ä¸­ï¼š
 	<!-- Spring MVC -->
 	<servlet>
 		<servlet-name>springmvc</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<!-- ²»Åä´Ë³õÊ¼»¯²ÎÊı£¬Ôò»áÄ¬ÈÏÈ¡WEB-INF/ÏÂ(servlet-name)-servlet.xmlÎÄ¼ş -->
+		<!-- ä¸é…æ­¤åˆå§‹åŒ–å‚æ•°ï¼Œåˆ™ä¼šé»˜è®¤å–WEB-INF/ä¸‹(servlet-name)-servlet.xmlæ–‡ä»¶ -->
 		<init-param>
         	<param-name>contextConfigLocation</param-name>
         	<param-value>classpath:springmvc-servlet.xml</param-value>

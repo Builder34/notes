@@ -1,2 +1,2 @@
-isAvailable×öÎªmapperµÄidÊ±£¬Èç<select id="isAvailable">ºÃÏñ»á³ö´í£¬ÄÑµÀÊÇ¹Ø¼ü×Ö£¬»¹Ğè¿¼Ö¤¡£
-Mapped Statements collection does not contain value for£¨Ò²¿ÉÄÜÊÇÇ°ºóµ÷ÓÃmapperÊ±£¬idÃ»¶ÔÓ¦£©
+isAvailableåšä¸ºmapperçš„idæ—¶ï¼Œå¦‚<select id="isAvailable">å¥½åƒä¼šå‡ºé”™ï¼Œéš¾é“æ˜¯å…³é”®å­—ï¼Œè¿˜éœ€è€ƒè¯ã€‚
+Mapped Statements collection does not contain value forï¼ˆä¹Ÿå¯èƒ½æ˜¯å‰åè°ƒç”¨mapperæ—¶ï¼Œidæ²¡å¯¹åº”ï¼‰

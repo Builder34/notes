@@ -1,22 +1,22 @@
-1.¹ØÓÚÉî¸´ÖÆ£¬½â¾ö¶ÔÏóÑ­»·ÒıÓÃ
-Ò»¸öList±»ÒıÓÃÊ±£¬ÏëÒªµÃµ½Ò»¸öĞÂµÄList£¬¶ø²»ÏëÖ¸ÏòËü£º
-1.1·½·¨1£ºClonable
+1.å…³äºæ·±å¤åˆ¶ï¼Œè§£å†³å¯¹è±¡å¾ªç¯å¼•ç”¨
+ä¸€ä¸ªListè¢«å¼•ç”¨æ—¶ï¼Œæƒ³è¦å¾—åˆ°ä¸€ä¸ªæ–°çš„Listï¼Œè€Œä¸æƒ³æŒ‡å‘å®ƒï¼š
+1.1æ–¹æ³•1ï¼šClonable
 	List<User>  list = new ArrayList<User>() ;
-	Õâ¸öUser±ØĞëÊµÏÖÁËClonable½Ó¿Ú£¬²¢ÇÒÖØĞ´ÁËclone·½·¨£¬·µ»ØUser
+	è¿™ä¸ªUserå¿…é¡»å®ç°äº†Clonableæ¥å£ï¼Œå¹¶ä¸”é‡å†™äº†cloneæ–¹æ³•ï¼Œè¿”å›User
 	
 	Itertor iters = srcList.itertor() ;
 	while(iters.hasNext()){
 		list.add(iters.next().clone()) ;
 	}
-1.2·½·¨2£ºcglibµÄBeanCopier£¬»òapacheµÄBeanUtilsµÈ¹¤¾ß
+1.2æ–¹æ³•2ï¼šcglibçš„BeanCopierï¼Œæˆ–apacheçš„BeanUtilsç­‰å·¥å…·
 	Itertor iters = srcList.itertor() ;
 	while(iters.hasNext()){
 		//BeanCopier
 	}
 	
 	
-2. log4jÈÕÖ¾Êä³öµ½Eclipse¿ØÖÆÌ¨ÖĞÎÄÂÒÂë
+2. log4jæ—¥å¿—è¾“å‡ºåˆ°Eclipseæ§åˆ¶å°ä¸­æ–‡ä¹±ç 
 
-http://www.coderli.com/log4j-console-file-garbled  £º log4jÅäÖÃµÄ±àÂëÎªUTF-8Ê±
+http://www.coderli.com/log4j-console-file-garbled  ï¼š log4jé…ç½®çš„ç¼–ç ä¸ºUTF-8æ—¶
 
-Windows-Perferences-General-Workspace-Text file encoding £ºeclipse¿ØÖÆÌ¨µÄÊä³ö±àÂëÒ²ĞèÒªÎªUTF-8£¬ÕâÑùÆ¥ÅäÁËÔò²»»áÂÒÂë
+Windows-Perferences-General-Workspace-Text file encoding ï¼šeclipseæ§åˆ¶å°çš„è¾“å‡ºç¼–ç ä¹Ÿéœ€è¦ä¸ºUTF-8ï¼Œè¿™æ ·åŒ¹é…äº†åˆ™ä¸ä¼šä¹±ç 
