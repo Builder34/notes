@@ -21,3 +21,7 @@ Java内存模型：
 http://www.cnblogs.com/xrq730/p/4850883.html
 http://blog.csdn.net/zdwzzu2006/article/details/2252516
 http://www.ibm.com/developerworks/cn/education/java/j-threads/j-threads.html
+
+线程间通信、回调：
+http://blog.whyun.com/posts//
+http://lavasoft.blog.51cto.com/62575/98796/
