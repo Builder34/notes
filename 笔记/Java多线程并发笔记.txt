@@ -25,3 +25,13 @@ http://www.ibm.com/developerworks/cn/education/java/j-threads/j-threads.html
 线程间通信、回调：
 http://blog.whyun.com/posts//
 http://lavasoft.blog.51cto.com/62575/98796/
+
+
+你有事去隔壁寝室找同学，发现人不在，你怎么办呢？
+方法1，每隔几分钟再去趟隔壁寝室，看人在不
+方法2，拜托与他同寝室的人，看到他回来时叫一下你
+前者是轮询，后者是回调。
+
+那你说，我直接在隔壁寝室等到同学回来可以吗？
+可以啊，只不过这样原本你可以省下时间做其他事，现在必须浪费在等待上了。把原来的非阻塞的异步调用变成了阻塞的同步调用。
+JavaScript的回调是在异步调用场景下使用的，使用回调性能好于轮询。
