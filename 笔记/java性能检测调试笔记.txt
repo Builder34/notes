@@ -1,0 +1,87 @@
+Java支持的数据类型有五种
+他们分别是：
+byte、char、short、int、枚举
+
+以上是JDK1.6以前的版本。JDK1.7时，又增加了String，所以相对于JDK1.7而言就是六种了
+
+JDK8安装后，会自动在环境变量path上配：
+C:\ProgramData\Oracle\Java\javapath
+这个文件夹上有java，javac...等程序，因此无配java_home/bin时,可以解释为什么可以在命令行上：java -version不报错
+但还是应该在Path环境变量上配置：%JAVA_HOME%\bin;
+
+
+
+
+InputStream in = CcpTemplateServiceImpl.class.getClassLoader().getResourceAsStream("agent.xml") ;  //调试使用的流
+
+CcpFileBean fileBean = new CcpFileBean() ;		
+byte[] contentData = IOUtils.toByteArray(in) ;  //inputstream只能读一次，因为读完之后其流指针在末尾了，下次读会认为无数据了
+下次再需要读in流，这会报错，这时解决方法：
+ByteArrayInputStream newInputS = new ByteArrayInputStream(byte[]);
+使用newInputS 来进行第二次读取
+newInputS.reset(); //可以进行第3,...,N次读取，(InputStream的reset()方法无此效果)
+
+枚举类enum的构造方法默认访问类型为private,也只能是private。
+
+try{
+ //第一行
+ //第二行
+ //第三行
+}catch(Exception e){
+	e.printStackTrace() ;
+}
+ //第四行
+ 
+第二行报错时，第三行的代码不会执行了，但第四行及后面的代码会执行....
+
+
+svn log --diff   : 查看svn具体的修改。
+
+
+
+
+
+
+
+
+
+1.jps 获取Java进程的PID。
+
+2.jstack pid >> java.txt 导出CPU占用高进程的线程栈。
+
+3.top -H -p PID 查看对应进程的哪个线程占用CPU过高。
+
+4.echo “obase=16; PID” | bc 将线程的PID转换为16进制。
+
+5.在第二步导出的Java.txt中查找转换成为16进制的线程PID。找到对应的线程栈。
+
+6.分析负载高的线程栈都是什么业务操作。优化程序并处理问题。
+
+http://blog.csdn.net/blade2001/article/details/9065985
+http://blog.csdn.net/hahahappy1986/article/details/8079237?utm_source=jiancool
+
+
+
+
+     /**
+     * 时间差（毫秒）转换为具体表示格式(x天x小时x分钟x秒x)
+     * */
+    public static String formatTimeSpan(long span) {
+        long minseconds = span % 1000;  //取余，值作为毫秒位
+        span = span / 1000;       //转换成秒
+        long seconds = span % 60;       //取余，值作为秒位
+        span = span / 60;         //转换成分钟
+        long mins = span % 60;          //取余，值作为分钟
+        span = span / 60;         //转换成小时
+        long hours = span % 24;         //取余，值作为小时
+        span = span / 24;         //转换成天
+        long days = span;               //值为天数
+        return (new Formatter()).format("%1$d天 %2$02d:%3$02d:%4$02d.%5$03d",
+                days, hours, mins, seconds, minseconds).toString();
+    }
+
+	
+	
+	
+-XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/dmoapp/aiodm/bea/user_projects/domains/aiodm_app/bin/gc.log
+加在启动脚本里面,打印gc的日志
