@@ -1,0 +1,16 @@
+
+创建eclipse项目提交到github中的步骤：
+1.先在eclipse创建一个项目
+2.在github上创建一个空白项目：
+
+3.进入eclipse项目的路径下：
+echo "# sparkwordcount" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Builder34/sparkwordcount.git
+git push -u origin master
+
+4.eclipse，右键需要上传的项目->team->share project>git ...
+5.右键项目->team->Add to Index
+6.右键项目->team->Commit -> (选择要提交的文件)->Commit and Push
